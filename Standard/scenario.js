@@ -68,7 +68,7 @@ const returnStateEnum = {
 };
 
 /** @type {Scenario} */
-const example = {
+export const example = {
   name: "example",
   scenarioFileVersion: 1,
   meta: {
@@ -90,7 +90,7 @@ const example = {
           },
           action: (event) => {
             console.log("Event 1 executed");
-            return returnStateEnum.SUCCESS;
+            return 'success';
           },
           actionOptions: {
             retryAmount: 0,
@@ -105,3 +105,6 @@ const example = {
     },
   ],
 };
+
+// Ensure this file is a module so TypeScript can resolve JSDoc types via import
+export default example;
