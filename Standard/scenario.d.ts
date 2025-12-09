@@ -1,4 +1,4 @@
-export type ReturnState = 'success' | 'failure' | 'retry' | 'skip';
+export type ReturnState = "success" | "failure" | "retry" | "skip";
 
 export interface EventMeta {
   description?: string;

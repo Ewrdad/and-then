@@ -72,7 +72,7 @@ const example = {
   name: "example",
   scenarioFileVersion: 1,
   meta: {
-    description: "This is an example scenario file.",
+    description: "This is an example scenario.",
   },
   situations: [
     {
