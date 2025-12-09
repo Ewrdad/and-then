@@ -1,6 +1,6 @@
 /**
  * MARK: startScenario
- * @param {import('../Standard/scenario.js').Scenario} scenario - A scenario object conforming to the standard format
+ * @param {import('../Standard/scenario').Scenario} scenario - A scenario object conforming to the standard format
  * @returns {void}
  */
 export const startScenario = (scenario) => {
