@@ -57,15 +57,17 @@
 
 /**
  * Enum representing return states for event actions.
+ * This object is typed so each value is a ReturnState union literal; it is frozen
+ * to behave like a true enum at runtime.
  * @readonly
- * @enum {ReturnState}
+ * @type {{SUCCESS: ReturnState, FAILURE: ReturnState, RETRY: ReturnState, SKIP: ReturnState}}
  */
-const returnStateEnum = {
+const returnStateEnum = Object.freeze({
   SUCCESS: "success",
   FAILURE: "failure",
   RETRY: "retry",
   SKIP: "skip",
-};
+});
 
 /** @type {Scenario} */
 export const example = {
@@ -90,7 +92,7 @@ export const example = {
           },
           action: (event) => {
             console.log("Event 1 executed");
-            return 'success';
+            return returnStateEnum.SUCCESS;
           },
           actionOptions: {
             retryAmount: 0,
