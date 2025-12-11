@@ -1,8 +1,4 @@
 /**
- * @typedef {'success'|'failure'|'retry'|'skip'} ReturnState
- */
-
-/**
  * @typedef {Object} EventMeta
  * @property {string} [description]
  */
@@ -56,18 +52,23 @@
  */
 
 /**
- * Enum representing return states for event actions.
- * This object is typed so each value is a ReturnState union literal; it is frozen
- * to behave like a true enum at runtime.
+ * Enum-like object representing return states for event actions.
+ * Each value is a ReturnState literal; object is frozen to behave like an enum.
  * @readonly
- * @type {{SUCCESS: ReturnState, FAILURE: ReturnState, RETRY: ReturnState, SKIP: ReturnState}}
+ * @enum {string}
  */
-const returnStateEnum = Object.freeze({
+export const returnStateEnum = Object.freeze({
   SUCCESS: "success",
   FAILURE: "failure",
   RETRY: "retry",
   SKIP: "skip",
+  ABORT: "abort",
 });
+
+/**
+ * Union type of the values of returnStateEnum.
+ * @typedef {typeof returnStateEnum[keyof typeof returnStateEnum]} ReturnState
+ */
 
 /** @type {Scenario} */
 export const example = {
